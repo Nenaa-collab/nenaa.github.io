@@ -12,7 +12,7 @@
 
 <style>
   /* ============================================================
-     NENAA — link in bio
+     VOIRA — link in bio
      Palette and type drawn from the editorial / fine-art inspo:
      blush parchment · muted olive · warm taupe · deep charcoal
      ============================================================ */
@@ -220,6 +220,45 @@
     background:rgba(221,201,188,.35);
   }
 
+  .contact-intro{
+    font-family:"Fraunces", serif;
+    font-style:italic;
+    font-weight:340;
+    font-size:0.95rem;
+    color:var(--ink-soft);
+    margin-top:10px;
+    opacity:0;
+  }
+  .contact-btns{
+    max-width:322px;
+    margin:16px auto 0;
+  }
+  .contact-btn{
+    display:flex; align-items:center; justify-content:center; gap:9px;
+    padding:13px 16px;
+    border:1px solid var(--olive);
+    border-radius:2px;
+    text-decoration:none;
+    color:var(--ink);
+    font-family:"Jost", sans-serif;
+    font-weight:400;
+    font-size:0.84rem;
+    letter-spacing:0.02em;
+    transition:background .3s ease, color .3s ease;
+    opacity:0;
+  }
+  .contact-btn + .contact-btn{ margin-top:11px; }
+  .contact-btn:hover, .contact-btn:focus-visible{
+    background:var(--olive);
+    color:var(--bone);
+    outline:none;
+  }
+  .cbi{ width:16px; height:16px; flex:0 0 auto; }
+  .cbi rect, .cbi path, .cbi circle{
+    fill:none; stroke:currentColor; stroke-width:1.4;
+    stroke-linecap:round; stroke-linejoin:round;
+  }
+
   /* ---------- Footer ---------- */
   footer{
     margin-top:clamp(34px,7vw,48px);
@@ -258,7 +297,7 @@
   @media (prefers-reduced-motion:reduce){
     *{ animation:none !important; transition:none !important; }
     .crest,.monogram,.wordmark,.ruler,.eyebrow,.tagline,
-    .section-label,.link,footer{ opacity:1 !important; }
+    .section-label,.link,.contact-intro,.contact-btn,footer{ opacity:1 !important; }
   }
 </style>
 </head>
@@ -325,7 +364,19 @@
 
     <nav class="links" id="links" aria-label="Curated links"></nav>
 
-    <footer class="reveal" style="animation-delay:1.05s">
+    <!-- GET IN TOUCH -->
+    <div class="section-label reveal" style="animation-delay:1s">
+      <span></span><b>Get in touch</b><span></span>
+    </div>
+    <p class="contact-intro reveal" style="animation-delay:1.06s">For collaborations &amp; enquiries</p>
+    <div class="contact-btns">
+      <a class="contact-btn reveal" style="animation-delay:1.12s" href="mailto:voira.neu@gmail.com">
+        <svg class="cbi" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7 L12 13 L20.5 7"/></svg>
+        voira.neu@gmail.com
+      </a>
+    </div>
+
+    <footer class="reveal" style="animation-delay:1.25s">
       <a class="ig" href="https://instagram.com/voira" target="_blank" rel="noopener">@voira on Instagram</a>
       <p class="footnote">Skincare &amp; wardrobe, honestly chosen.</p>
     </footer>
